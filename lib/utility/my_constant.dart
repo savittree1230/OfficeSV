@@ -4,9 +4,12 @@ class MyConstant {
   // field
   static String appName = 'Officer SV';
   static Color primary = const Color(0xffe31717);
-  static Color dark = const Color(0xfff092c1);
-  static Color light = const Color(0xfff52c90);
+  static Color dark = const Color(0xffc2185b);
+  static Color light = const Color(0xffef9a9a);
   // method
+  BoxDecoration painBox() => BoxDecoration(
+    color: light.withOpacity(0.5),
+  );
   TextStyle h1Style() => TextStyle(
         fontSize: 30,
         color: dark,

@@ -8,11 +8,13 @@ class ShowForm extends StatelessWidget {
   final String label;
   final IconData iconData;
   final bool? sccuText;
+  final Function(String) changeFunc;
   const ShowForm({
     Key? key,
     required this.label,
     required this.iconData,
     this.sccuText,
+    required this.changeFunc,
   }) : super(key: key);
 
   @override
@@ -21,17 +23,22 @@ class ShowForm extends StatelessWidget {
       margin: EdgeInsets.only(top: 16),
       width: 250,
       height: 40,
-      child: TextFormField(obscureText: sccuText ?? false,
+      child: TextFormField(onChanged: changeFunc,
+        obscureText: sccuText ?? false,
         decoration: InputDecoration(
+          fillColor: Colors.white.withOpacity(1),
+          filled: true,
           prefixIcon: Icon(
             iconData,
             color: MyConstant.dark,
           ),
           label: ShowText(label: label),
-          enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(15),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
             borderSide: BorderSide(color: MyConstant.dark),
           ),
-          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(15),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
             borderSide: BorderSide(color: MyConstant.light),
           ),
         ),
