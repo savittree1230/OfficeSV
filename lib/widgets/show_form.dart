@@ -26,7 +26,7 @@ class ShowForm extends StatelessWidget {
       child: TextFormField(onChanged: changeFunc,
         obscureText: sccuText ?? false,
         decoration: InputDecoration(
-          fillColor: Colors.white.withOpacity(1),
+          fillColor: Colors.white.withOpacity(0.7),
           filled: true,
           prefixIcon: Icon(
             iconData,
