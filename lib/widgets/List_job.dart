@@ -44,7 +44,7 @@ class _ListJobState extends State<ListJob> {
     return Scaffold(
       body: load
           ? const ShowProgress()
-          : ListView.builder(
+          : ListView.builder(itemCount: jobModels.length,
               itemBuilder: (context, index) =>
                   ShowText(label: jobModels[index].jobName),
             ),
